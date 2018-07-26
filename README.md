@@ -9,11 +9,11 @@ ARF = nil
 RegisterNetEvent("arf:receivePlayerData")
 AddEventHandler("arf:receivePlayerData", function(data)
 	ARF = {}
-	ARF.PlayerData = data[1]
+	ARF.PlayerData = data
 end)
 
-AddEventHandler('arf:getSharedObject', function(cb)
-	cb(ARF)
+Citizen.CreateThread(function()
+	TriggerServerEvent("arf:getPlayerData")
 end)
 ```
 - Server:
@@ -29,3 +29,4 @@ Citizen.CreateThread(function()
 		end)
 	end
 end)
+```
