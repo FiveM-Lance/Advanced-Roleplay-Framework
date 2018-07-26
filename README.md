@@ -18,7 +18,7 @@ end)
 ```
 - Server:
 ```lua
-ARF = {}
+ARF = nil
 
 Citizen.CreateThread(function()
 	TriggerServerEvent("arf:getPlayerData")
