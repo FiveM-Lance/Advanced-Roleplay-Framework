@@ -11,10 +11,6 @@ AddEventHandler("arf:receivePlayerData", function(data)
 	ARF = {}
 	ARF.PlayerData = data
 end)
-
-Citizen.CreateThread(function()
-	TriggerServerEvent("arf:getPlayerData")
-end)
 ```
 - Server:
 ```lua
