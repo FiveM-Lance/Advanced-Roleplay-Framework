@@ -1,8 +1,11 @@
 # Advanced-Roleplay-Framework
 Advanced Roleplay Framework - Coming Soon?
 # ARF Boilerplate
-All scripts using this framework must use the following lines in the beginning of their .lua files:
-- Client:
+
+## Use the following lines of code and the documentation in order to make a resource using this framework.
+
+### Client.lua
+
 ```lua
 ARF = nil
 
@@ -12,17 +15,13 @@ AddEventHandler("arf:receivePlayerData", function(data)
 	ARF.PlayerData = data
 end)
 ```
-- Server:
+
+### Server.lua
+
 ```lua
 ARF = nil
 
 Citizen.CreateThread(function()
 	TriggerServerEvent("arf:getPlayerData")
-	while ARF == nil do
-		Citizen.Wait(0)
-		TriggerEvent('arf:getSharedObject', function(data) 
-			ARF = data
-		end)
-	end
 end)
 ```
